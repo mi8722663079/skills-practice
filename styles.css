@@ -9,10 +9,14 @@ body {
 }
 /* general class */
 :root {
+  --ani1: ;
   --placement1: e1;
   --placement2: e2;
   --placement3: e3;
   --animmation1: 3s ease-in 1s infinite reverse both running slidein;
+}
+.pos {
+  transform: translateX(222px);
 }
 .border {
   border: 1.8px solid #00439c;
@@ -121,16 +125,18 @@ button {
   z-index: 1;
 }
 .element {
-  width: 45%;
+  width: 40vw;
   padding: 1.5px;
+  margin: 0 5px 0 5px;
   height: fit-content;
 }
 .content {
   margin-top: 5px;
+  position: relative;
+  left: -13%;
   width: 100%;
-  display: grid;
+  display: flex;
   justify-items: center;
-  grid-template: 1fr / 1fr;
 }
 .element img {
   border-radius: 8px;
@@ -138,25 +144,12 @@ button {
   height: 100%;
 }
 .e1 {
-  position: absolute;
-  left: -20%;
-  z-index: 3;
 }
 .e2 {
-  position: absolute;
 }
 .e3 {
-  position: absolute;
-  right: -23%;
 }
-@keyframes slide1 {
-  0% {
-    left: -20%;
-  }
-  100% {
-    left: 29%;
-  }
-}
+
 footer {
   background-color: #00439c;
   color: white;
