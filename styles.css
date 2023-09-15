@@ -28,7 +28,7 @@ body {
 }
 @keyframes slideIn {
   from {
-    left: -300;
+    left: -1000;
   }
   to {
     left: 10;
@@ -39,14 +39,14 @@ body {
     left: 10;
   }
   to {
-    left: -300;
+    left: -1000;
   }
 }
 .slideIn {
-  animation: slideIn 200ms both ease-out;
+  animation: slideIn 300ms both ease-out;
 }
 .slideOut {
-  animation: slideOut 200ms both ease-out;
+  animation: slideOut 300ms both ease-out;
 }
 /* end of general class */
 .parent {
@@ -73,12 +73,12 @@ nav {
   position: absolute;
   border-radius: 7px;
   top: 50;
-  left: -300;
+  left: -1000;
   background-color: rgb(28, 26, 26);
   display: flex;
   justify-content: start;
   align-items: center;
-  width: 80%;
+  width: 85%;
   height: fit-content;
   padding: 3px;
 }
