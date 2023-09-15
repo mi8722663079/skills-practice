@@ -19,6 +19,34 @@ body {
 :root {
   --color1: linear;
   --gradiant: radial-gradient(#c90707, #470302);
+  --gradient1: linear-gradient(
+    90deg,
+    rgba(0, 212, 255, 1) 4%,
+    rgba(9, 9, 121, 1) 56%,
+    rgba(2, 0, 36, 1) 100%
+  );
+}
+@keyframes slideIn {
+  from {
+    left: -300;
+  }
+  to {
+    left: 10;
+  }
+}
+@keyframes slideOut {
+  from {
+    left: 10;
+  }
+  to {
+    left: -300;
+  }
+}
+.slideIn {
+  animation: slideIn 200ms both ease-out;
+}
+.slideOut {
+  animation: slideOut 200ms both ease-out;
 }
 /* end of general class */
 .parent {
@@ -41,6 +69,36 @@ nav {
   background-color: white;
   font-size: 12px;
 }
+.search-box {
+  position: absolute;
+  border-radius: 7px;
+  top: 50;
+  left: -300;
+  background-color: rgb(28, 26, 26);
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 80%;
+  height: fit-content;
+  padding: 3px;
+}
+.box {
+  border: 1.5px solid transparent;
+  width: 100%;
+  background: linear-gradient(rgb(28, 26, 26), rgb(28, 26, 26)) padding-box,
+    var(--gradient1) border-box;
+  border-radius: 7px;
+}
+.box i {
+  color: #00439c;
+  margin-left: 7px;
+}
+.box input {
+  background-color: transparent;
+  border: none;
+  padding: 5px;
+  text-decoration: #00439c;
+}
 nav > * {
   margin: 0 10px 0 10px;
 }
@@ -55,10 +113,15 @@ nav > svg {
   margin-bottom: 5px;
 }
 .navigate > .fa-bars {
-  padding-right: 35px;
+  color: #00439c;
+  padding-right: 20px;
 }
 .navigate > svg {
+  color: #00439c;
   width: 21px;
+}
+.navigate > svg:hover {
+  cursor: pointer;
 }
 nav > button {
   width: 70.95px;

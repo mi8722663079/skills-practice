@@ -5,6 +5,8 @@ const panel1 = document.querySelector(".e1");
 const panel2 = document.querySelector(".e2");
 const panel3 = document.querySelector(".e3");
 const image = document.querySelector(".ad1");
+const search = document.querySelector(".navigate svg");
+const bar = document.querySelector(".search-box");
 const rs = getComputedStyle(root);
 const p1 = getComputedStyle(panel1);
 const p2 = getComputedStyle(panel2);
@@ -359,4 +361,9 @@ panels.forEach((panel) => {
     }
   });
 });
-console.log(panel1);
+
+search.addEventListener("click", () => {
+  bar.getAttribute("class").includes("slideIn")
+    ? bar.classList.toggle("slideOut")
+    : bar.classList.toggle("slideIn");
+});
