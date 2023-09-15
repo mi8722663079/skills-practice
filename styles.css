@@ -97,6 +97,7 @@ nav {
   background-color: transparent;
   border: none;
   padding: 5px;
+  outline: none;
   text-decoration: #00439c;
 }
 nav > * {
