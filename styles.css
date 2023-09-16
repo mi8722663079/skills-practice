@@ -8,46 +8,136 @@ body {
   overflow-x: hidden;
 }
 /* general class */
+@keyframes bordering {
+  from {
+    border: 1.8px solid transparent;
+  }
+  to {
+    border: 1.8px solid #00439c;
+  }
+}
 [data-state="active"] {
-  border: 1.8px solid #00439c;
   border-radius: 10px;
   transition: border 200ms ease-in;
 }
 [data-state="hidden"] img {
+  border: 1.8px solid transparent;
+  border-radius: 10px;
   opacity: 0.7;
 }
 :root {
   --color1: linear;
   --gradiant: radial-gradient(#c90707, #470302);
-  --gradient1: linear-gradient(
+  --gradiant1: radial-gradient(#0714c9, #020947);
+  --gradiant2: radial-gradient(#c9c907, #464702);
+  --gradientS: linear-gradient(
     90deg,
     rgba(0, 212, 255, 1) 4%,
     rgba(9, 9, 121, 1) 56%,
     rgba(2, 0, 36, 1) 100%
   );
 }
-@keyframes slideIn {
-  from {
-    left: -1000;
+@keyframes close {
+  0% {
+    opacity: 1;
+    z-index: 4;
   }
-  to {
+  /* 50% {
+    opacity: 1;
+    z-index: 4;
+  } */
+  100% {
+    opacity: 0;
+    z-index: 1;
+  }
+}
+@keyframes close1 {
+  0% {
+    opacity: 1;
+    z-index: 4;
+  }
+  /* 50% {
+    opacity: 1;
+    z-index: 4;
+  } */
+  100% {
+    opacity: 0;
+    z-index: 1;
+  }
+}
+@keyframes open1 {
+  0% {
+    opacity: 1;
+    z-index: 4;
+  }
+  100% {
+    opacity: 0;
+    z-index: 1;
+  }
+}
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    left: -500;
+  }
+  10% {
+    opacity: 0;
+    left: 10;
+    top: 0;
+  }
+  50% {
+    opacity: 0;
+    left: 10;
+  }
+  75% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    top: 50;
     left: 10;
   }
 }
 @keyframes slideOut {
-  from {
+  0% {
+    opacity: 1;
+    left: 10;
+    top: 50;
+  }
+  25% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0;
     left: 10;
   }
-  to {
-    left: -1000;
+  90% {
+    opacity: 0;
+    left: 10;
+    top: 0;
+  }
+  100% {
+    opacity: 0;
+    left: -500;
+    top: 0;
   }
 }
 .slideIn {
-  animation: slideIn 300ms both ease-out;
+  animation: slideIn 300ms forwards ease-in-out;
 }
 .slideOut {
-  animation: slideOut 300ms both ease-out;
+  animation: slideOut 300ms forwards ease-in-out;
 }
+.close {
+  animation: close 800ms ease-in-out;
+}
+.close1 {
+  animation: close1 800ms ease-in-out;
+}
+.open1 {
+  animation: open1 800ms ease-in-out forwards;
+}
+
 /* end of general class */
 .parent {
   display: grid;
@@ -72,8 +162,8 @@ nav {
 .search-box {
   position: absolute;
   border-radius: 7px;
-  top: 50;
-  left: -1000;
+  top: 0;
+  left: -500;
   background-color: rgb(28, 26, 26);
   display: flex;
   justify-content: start;
@@ -81,12 +171,13 @@ nav {
   width: 85%;
   height: fit-content;
   padding: 3px;
+  opacity: 0;
 }
 .box {
   border: 1.5px solid transparent;
   width: 100%;
   background: linear-gradient(rgb(28, 26, 26), rgb(28, 26, 26)) padding-box,
-    var(--gradient1) border-box;
+    var(--gradientS) border-box;
   border-radius: 7px;
 }
 .box i {
@@ -95,6 +186,7 @@ nav {
 }
 .box input {
   background-color: transparent;
+  width: 90%;
   border: none;
   padding: 5px;
   color: #0072ce;
@@ -135,15 +227,38 @@ nav > button {
   padding: 1px 14px 4px 12px;
   margin: 20px 20px 20px 0px;
   border-radius: 40px;
+  outline: 1.5px solid transparent;
+  outline-offset: 1.2px;
+}
+nav > button:hover {
+  outline: 1.5px solid #00439c;
+  outline-offset: 1.2px;
+  transition-duration: 400ms;
+}
+nav > button:active {
+  opacity: 0.7;
+  transition-duration: 400ms;
 }
 article {
   display: grid;
-  grid-template: 1fr 300px / 1fr;
+  grid-template: 1fr fit-content 1fr / 1fr;
+}
+.gradiant {
+  position: absolute;
+  width: 100vw;
+  aspect-ratio: 2/3;
+  background-image: var(--gradiant);
+  opacity: 0;
+  z-index: 1;
+  /* animation: open 800ms forwards ease-in-out 1; */
+  /* animation: open 800ms forwards; */
 }
 .image {
   position: relative;
   width: 100vw;
+  background-image: var(--gradiant);
 }
+
 .buynow {
   width: 100%;
   height: 30%;
@@ -167,16 +282,17 @@ button {
   margin-bottom: 5px;
 }
 .buynow p {
-  width: 60%;
-  margin-left: 7%;
+  width: 70%;
+  margin-left: 3%;
   font-size: 12px;
+  text-align: center;
 }
 .buynow > h2 {
   font-size: 20px;
   font-weight: 500;
 }
 .buynow > h1 {
-  margin-bottom: 20px;
+  margin-bottom: 12px;
 }
 .buynow > button {
   color: white;
@@ -185,11 +301,32 @@ button {
   border-radius: 40px;
   padding: 10px;
   font-weight: bold;
+  outline: 1.5px solid transparent;
+  outline-offset: 1.2px;
+}
+.buynow > button:hover {
+  outline: 1.5px solid #c90707;
+  outline-offset: 1.4px;
+  transition-duration: 400ms;
+}
+.buynow > button:active {
+  opacity: 0.7;
+  transition-duration: 400ms;
 }
 .image > img {
   width: 100%;
   height: 100%;
   aspect-ratio: 2/3;
+}
+
+.content {
+  margin-top: 5px;
+  position: relative;
+  height: fit-content;
+  left: -13%;
+  width: 100%;
+  display: flex;
+  justify-items: center;
 }
 .element {
   width: 40vw;
@@ -199,25 +336,71 @@ button {
   transform: scale(1);
   transition-duration: 500ms;
 }
-/* .element:hover {
-  opacity: 1;
-  transform: scale(1.04);
-  transition-duration: 500ms;
-} */
-.content {
-  margin-top: 5px;
-  position: relative;
-  left: -13%;
-  width: 100%;
-  display: flex;
-  justify-items: center;
-}
 .element img {
   border-radius: 8px;
   width: 100%;
   height: 100%;
 }
 
+.ps {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+  justify-content: start;
+  align-items: center;
+}
+.ps img {
+  width: 80%;
+  margin-bottom: 60px;
+  object-fit: contain;
+}
+.ps h1 {
+  margin-left: 7%;
+  margin-bottom: 3%;
+}
+.ps p {
+  margin-left: 3%;
+  width: 70%;
+  margin-bottom: 3%;
+  text-align: center;
+}
+.ps button {
+  border: none;
+  padding: 4px 7px 4px 7px;
+  border-radius: 40px;
+  color: white;
+}
+.btn2 {
+  background-color: #c90707;
+  margin-left: 20px;
+  outline: 1.5px solid transparent;
+  outline-offset: 1.2px;
+}
+.btn1 {
+  background-color: #00439c;
+  outline: 1.5px solid transparent;
+  outline-offset: 1.2px;
+  margin-left: 23%;
+}
+.btn1:hover {
+  outline: 1.5px solid #00439c;
+  outline-offset: 1.2px;
+  transition-duration: 400ms;
+}
+.btn2:hover {
+  outline: 1.5px solid #c90707;
+  outline-offset: 1.2px;
+  transition-duration: 400ms;
+}
+.btn1:active {
+  opacity: 0.7;
+  transition-duration: 400ms;
+}
+.btn2:active {
+  opacity: 0.7;
+  transition-duration: 400ms;
+}
 footer {
   background-color: #00439c;
   color: white;
