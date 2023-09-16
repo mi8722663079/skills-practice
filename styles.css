@@ -8,21 +8,11 @@ body {
   overflow-x: hidden;
 }
 /* general class */
-@keyframes bordering {
-  from {
-    border: 1.8px solid transparent;
-  }
-  to {
-    border: 1.8px solid #00439c;
-  }
-}
+
 [data-state="active"] {
-  border-radius: 10px;
-  transition: border 200ms ease-in;
+  opacity: 1;
 }
 [data-state="hidden"] img {
-  border: 1.8px solid transparent;
-  border-radius: 10px;
   opacity: 0.7;
 }
 :root {
@@ -330,11 +320,20 @@ button {
 }
 .element {
   width: 40vw;
-  padding: 1.5px;
   margin: 0 5px 0 5px;
+  border-radius: 8px;
   height: fit-content;
-  transform: scale(1);
-  transition-duration: 500ms;
+  outline: 1.5px solid transparent;
+  outline-offset: 1.5px;
+}
+.element:hover {
+  outline: 1.5px solid #00439c;
+  outline-offset: 1.5px;
+  transition-duration: 400ms;
+}
+.element:active {
+  opacity: 0.7;
+  transition-duration: 400ms;
 }
 .element img {
   border-radius: 8px;
