@@ -47,6 +47,15 @@ button:active {
     rgba(2, 0, 36, 1) 100%
   );
 }
+.blue-outline:hover {
+  outline: 1.5px solid #00439c;
+}
+.red-outline:hover {
+  outline: 1.5px solid #c90707;
+}
+.yellow-outline:hover {
+  outline: 1.5px solid #9b9b06;
+}
 @keyframes opacity1 {
   0% {
     opacity: 1;
@@ -137,23 +146,23 @@ button:active {
 }
 .close {
   animation: close 1000ms ease-in-out;
-  animation-delay: 100ms;
+  animation-delay: 80ms;
 }
 .open1 {
   animation: open1 1000ms ease-in-out forwards;
-  animation-delay: 100ms;
+  animation-delay: 80ms;
 }
 .opacity1 {
-  animation: opacity1 700ms ease-in-out forwards;
+  animation: opacity1 600ms ease-in-out forwards;
 }
 .opacity2 {
-  animation: opacity1 800ms ease-in-out forwards;
+  animation: opacity1 700ms ease-in-out forwards;
 }
 .opacity3 {
-  animation: opacity1 900ms ease-in-out forwards;
+  animation: opacity1 800ms ease-in-out forwards;
 }
 .opacity4 {
-  animation: opacity1 1000ms ease-in-out forwards;
+  animation: opacity1 900ms ease-in-out forwards;
 }
 /* end of general class */
 .parent {
@@ -326,7 +335,6 @@ button {
   opacity: 0;
 }
 .buynow > button:hover {
-  outline: 1.5px solid #c90707;
   outline-offset: 1.4px;
   transition-duration: 400ms;
 }

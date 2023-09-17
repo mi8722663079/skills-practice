@@ -171,6 +171,9 @@ panels.forEach((panel) => {
           "Feel the power of PlayStation® in the palm of your hand";
         btn1.style.backgroundColor = "#00439c";
         image.setAttribute("src", img3);
+        btn1.classList.add("blue-outline");
+        btn1.classList.remove("red-outline");
+        btn1.classList.remove("yellow-outline");
       }, 200);
       gradiant.style.backgroundImage = "var(--gradiant1)";
     } else if (panel == panel2) {
@@ -291,6 +294,9 @@ panels.forEach((panel) => {
           "get Playstation 5 spider-man edition -- get marevl's spider man 2 gold edition";
         btn1.style.backgroundColor = "#c90707";
         image.setAttribute("src", img1);
+        btn1.classList.add("red-outline");
+        btn1.classList.remove("blue-outline");
+        btn1.classList.remove("yellow-outline");
       }, 200);
       gradiant.style.backgroundImage = "var(--gradiant)";
     } else if (panel == panel3) {
@@ -410,6 +416,9 @@ panels.forEach((panel) => {
           "Experience speed like never before --get RWS deluxe edition";
         image.setAttribute("src", img2);
         btn1.style.backgroundColor = "#9b9b06";
+        btn1.classList.add("yellow-outline");
+        btn1.classList.remove("red-outline");
+        btn1.classList.remove("blue-outline");
       }, 200);
       gradiant.style.backgroundImage = "var(--gradiant2)";
     }
