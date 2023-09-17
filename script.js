@@ -10,6 +10,8 @@ const bar = document.querySelector(".search-box");
 const header = document.querySelector(".buynow h1");
 const header2 = document.querySelector(".buynow h2");
 const text = document.querySelector(".buynow p");
+const btn1 = document.querySelector(".buynow button");
+const btn1s = getComputedStyle(btn1, ":hover");
 const gradiant = document.querySelector(".gradiant");
 const g1 = getComputedStyle(gradiant);
 const rs = getComputedStyle(root);
@@ -29,12 +31,26 @@ if (gradiant.getAttribute("class").includes("close")) {
 
 window.addEventListener("load", () => {
   gradiant.classList.add("open1");
+  header.classList.add("opacity1");
+  header2.classList.add("opacity2");
+  text.classList.add("opacity3");
+  btn1.classList.add("opacity4");
 });
 panels.forEach((panel) => {
   panel.addEventListener("click", () => {
     if (panel.getAttribute("data-state") == "active") {
       return;
     }
+    setTimeout(() => {
+      header.classList.toggle("opacity1");
+      header2.classList.toggle("opacity2");
+      text.classList.toggle("opacity3");
+      btn1.classList.toggle("opacity4");
+    }, 1);
+    header.classList.toggle("opacity1");
+    header2.classList.toggle("opacity2");
+    text.classList.toggle("opacity3");
+    btn1.classList.toggle("opacity4");
     gradiant.classList.toggle("open1");
     gradiant.classList.toggle("close");
     if (panel == panel1) {
@@ -148,12 +164,15 @@ panels.forEach((panel) => {
         panel2.setAttribute("data-state", "hidden");
         panel3.setAttribute("data-state", "hidden");
       }
-      header.textContent = "PS Portable Remote Player";
-      header2.textContent = "Easier than Ever Before";
-      text.textContent =
-        "Feel the power of PlayStation® in the palm of your hand";
+      setTimeout(() => {
+        header.textContent = "PS Portable Remote Player";
+        header2.textContent = "Easier than Ever Before";
+        text.textContent =
+          "Feel the power of PlayStation® in the palm of your hand";
+        btn1.style.backgroundColor = "#00439c";
+        image.setAttribute("src", img3);
+      }, 200);
       gradiant.style.backgroundImage = "var(--gradiant1)";
-      image.setAttribute("src", img3);
     } else if (panel == panel2) {
       if (panel3.getAttribute("data-state") == "active") {
         panel1.animate(
@@ -265,12 +284,15 @@ panels.forEach((panel) => {
         panel2.setAttribute("data-state", "active");
         panel3.setAttribute("data-state", "hidden");
       }
-      header.textContent = "BE Greater, Together";
-      header2.textContent = "Play like Never Before";
-      text.textContent =
-        "get Playstation 5 spider-man edition -- get marevl's spider man 2 gold edition";
+      setTimeout(() => {
+        header.textContent = "BE Greater, Together";
+        header2.textContent = "Play like Never Before";
+        text.textContent =
+          "get Playstation 5 spider-man edition -- get marevl's spider man 2 gold edition";
+        btn1.style.backgroundColor = "#c90707";
+        image.setAttribute("src", img1);
+      }, 200);
       gradiant.style.backgroundImage = "var(--gradiant)";
-      image.setAttribute("src", img1);
     } else if (panel == panel3) {
       if (panel1.getAttribute("data-state") == "active") {
         panel1.animate(
@@ -381,12 +403,15 @@ panels.forEach((panel) => {
         panel2.setAttribute("data-state", "hidden");
         panel3.setAttribute("data-state", "active");
       }
-      header.textContent = "BE the Fastest EVER!!";
-      header2.textContent = "Strive for speed";
-      text.textContent =
-        "Experience speed like never before --get RWS deluxe edition";
+      setTimeout(() => {
+        header.textContent = "BE the Fastest EVER!!";
+        header2.textContent = "Strive for speed";
+        text.textContent =
+          "Experience speed like never before --get RWS deluxe edition";
+        image.setAttribute("src", img2);
+        btn1.style.backgroundColor = "#9b9b06";
+      }, 200);
       gradiant.style.backgroundImage = "var(--gradiant2)";
-      image.setAttribute("src", img2);
     }
   });
 });

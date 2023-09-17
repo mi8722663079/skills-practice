@@ -10,7 +10,19 @@ html {
 body {
   overflow-x: hidden;
   background-color: white;
+  opacity: 0;
+  animation: reveal 200ms ease-in-out forwards;
 }
+/* body animation */
+@keyframes reveal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* end */
 button:hover,
 button:active {
   cursor: pointer;
@@ -35,21 +47,18 @@ button:active {
     rgba(2, 0, 36, 1) 100%
   );
 }
-@keyframes close {
+@keyframes opacity1 {
   0% {
     opacity: 1;
-    z-index: 4;
   }
-  /* 50% {
-    opacity: 1;
-    z-index: 4;
-  } */
-  100% {
+  50% {
     opacity: 0;
-    z-index: 1;
+  }
+  100% {
+    opacity: 1;
   }
 }
-@keyframes close1 {
+@keyframes close {
   0% {
     opacity: 1;
     z-index: 4;
@@ -127,15 +136,25 @@ button:active {
   animation: slideOut 300ms forwards ease-in-out;
 }
 .close {
-  animation: close 800ms ease-in-out;
-}
-.close1 {
-  animation: close1 800ms ease-in-out;
+  animation: close 1000ms ease-in-out;
+  animation-delay: 100ms;
 }
 .open1 {
-  animation: open1 800ms ease-in-out forwards;
+  animation: open1 1000ms ease-in-out forwards;
+  animation-delay: 100ms;
 }
-
+.opacity1 {
+  animation: opacity1 700ms ease-in-out forwards;
+}
+.opacity2 {
+  animation: opacity1 800ms ease-in-out forwards;
+}
+.opacity3 {
+  animation: opacity1 900ms ease-in-out forwards;
+}
+.opacity4 {
+  animation: opacity1 1000ms ease-in-out forwards;
+}
 /* end of general class */
 .parent {
   display: grid;
@@ -284,13 +303,16 @@ button {
   margin-left: 3%;
   font-size: 12px;
   text-align: center;
+  opacity: 0;
 }
 .buynow > h2 {
   font-size: 20px;
   font-weight: 500;
+  opacity: 0;
 }
 .buynow > h1 {
   margin-bottom: 12px;
+  opacity: 0;
 }
 .buynow > button {
   color: white;
@@ -301,6 +323,7 @@ button {
   font-weight: bold;
   outline: 1.5px solid transparent;
   outline-offset: 1.2px;
+  opacity: 0;
 }
 .buynow > button:hover {
   outline: 1.5px solid #c90707;
@@ -342,8 +365,6 @@ button {
 }
 .element:active {
   cursor: pointer;
-  opacity: 0.7;
-  transition-duration: 400ms;
 }
 .element img {
   border-radius: 8px;
