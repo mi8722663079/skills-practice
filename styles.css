@@ -4,12 +4,9 @@ html * {
   box-sizing: border-box;
   font-family: "Zrnic", sans-serif;
 }
-html {
-  background-color: white;
-}
 body {
   overflow-x: hidden;
-  background-color: white;
+  background-color: white !important;
   opacity: 0;
   animation: reveal 200ms ease-in-out forwards;
 }
