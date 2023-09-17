@@ -295,6 +295,7 @@ panels.forEach((panel) => {
           "get Playstation 5 spider-man edition -- get marevl's spider man 2 gold edition";
         btn1.style.backgroundColor = "#c90707";
         image.setAttribute("src", img1);
+        btn1.textContent = "Pre-order now";
         btn1.classList.add("red-outline");
         btn1.classList.remove("blue-outline");
         btn1.classList.remove("yellow-outline");
