@@ -170,6 +170,7 @@ panels.forEach((panel) => {
         text.textContent =
           "Feel the power of PlayStation® in the palm of your hand";
         btn1.style.backgroundColor = "#00439c";
+        btn1.textContent = "Buy now";
         image.setAttribute("src", img3);
         btn1.classList.add("blue-outline");
         btn1.classList.remove("red-outline");
@@ -416,6 +417,7 @@ panels.forEach((panel) => {
           "Experience speed like never before --get RWS deluxe edition";
         image.setAttribute("src", img2);
         btn1.style.backgroundColor = "#9b9b06";
+        btn1.textContent = "Buy now";
         btn1.classList.add("yellow-outline");
         btn1.classList.remove("red-outline");
         btn1.classList.remove("blue-outline");
