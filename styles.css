@@ -338,7 +338,7 @@ nav {
 }
 .borders {
   background: radial-gradient(
-    10px circle at var(--mouse-x) var(--mouse-y),
+    60px circle at var(--mouse-x) var(--mouse-y),
     rgba(36, 93, 213, 0.4) 33%,
     rgba(23, 46, 209, 0) 99%
   );
