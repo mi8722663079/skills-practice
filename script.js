@@ -15,7 +15,14 @@ const btn1 = document.querySelector(".buynow button");
 const btn1s = getComputedStyle(btn1, ":hover");
 const gradiant = document.querySelector(".gradiant");
 const menu = document.querySelector(".menu-box");
-const ball = document.querySelector(".ball");
+const ball1 = document.querySelector(".ball1");
+const ball2 = document.querySelector(".ball2");
+const ball3 = document.querySelector(".ball3");
+const ball4 = document.querySelector(".ball4");
+const ball5 = document.querySelector(".ball5");
+const ball6 = document.querySelector(".ball6");
+const ball7 = document.querySelector(".ball7");
+const ball8 = document.querySelector(".ball8");
 const g1 = getComputedStyle(gradiant);
 const rs = getComputedStyle(root);
 const p1 = getComputedStyle(panel1);
@@ -469,4 +476,44 @@ barBtn.addEventListener("click", () => {
 
 if (gradiant.getAttribute("class").includes("close")) {
   gradiant.classList.toggle("close");
+}
+function handler1(e) {
+  const x = e.clientX - 35;
+  const y = e.clientY - 70;
+  ball1.style.transform = `translate( ${x}px, ${y}px)`;
+}
+function handler2(e) {
+  const x = e.clientX - 85;
+  const y = e.clientY - 70;
+  ball2.style.transform = `translate( ${x}px, ${y}px)`;
+}
+function handler3(e) {
+  const x = e.clientX - 145;
+  const y = e.clientY - 70;
+  ball3.style.transform = `translate( ${x}px, ${y}px)`;
+}
+function handler4(e) {
+  const x = e.clientX - 35;
+  const y = e.clientY - 110;
+  ball4.style.transform = `translate( ${x}px, ${y}px)`;
+}
+function handler5(e) {
+  const x = e.clientX - 85;
+  const y = e.clientY - 110;
+  ball5.style.transform = `translate( ${x}px, ${y}px)`;
+}
+function handler6(e) {
+  const x = e.clientX - 145;
+  const y = e.clientY - 110;
+  ball6.style.transform = `translate( ${x}px, ${y}px)`;
+}
+function handler7(e) {
+  const x = e.clientX - 25;
+  const y = e.clientY - 150;
+  ball7.style.transform = `translate( ${x}px, ${y}px)`;
+}
+function handler8(e) {
+  const x = e.clientX - 25;
+  const y = e.clientY - 200;
+  ball8.style.transform = `translate( ${x}px, ${y}px)`;
 }
