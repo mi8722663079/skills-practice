@@ -6,6 +6,7 @@ const panel2 = document.querySelector(".e2");
 const panel3 = document.querySelector(".e3");
 const image = document.querySelector(".ad1");
 const search = document.querySelector(".navigate svg");
+const barBtn = document.querySelector(".navigate .fa-bars");
 const bar = document.querySelector(".search-box");
 const header = document.querySelector(".buynow h1");
 const header2 = document.querySelector(".buynow h2");
@@ -13,6 +14,8 @@ const text = document.querySelector(".buynow p");
 const btn1 = document.querySelector(".buynow button");
 const btn1s = getComputedStyle(btn1, ":hover");
 const gradiant = document.querySelector(".gradiant");
+const menu = document.querySelector(".menu-box");
+const ball = document.querySelector(".ball");
 const g1 = getComputedStyle(gradiant);
 const rs = getComputedStyle(root);
 const p1 = getComputedStyle(panel1);
@@ -429,10 +432,41 @@ panels.forEach((panel) => {
 });
 
 search.addEventListener("click", () => {
-  bar.getAttribute("class").includes("slideIn")
-    ? bar.classList.toggle("slideOut")
-    : bar.classList.toggle("slideIn");
+  if (bar.getAttribute("class").includes("slideIn")) {
+    bar.classList.remove("slideIn");
+    bar.classList.add("slideOut");
+  } else if (bar.getAttribute("class").includes("slideIn") === false) {
+    bar.classList.remove("slideOut");
+    bar.classList.add("slideIn");
+  } else {
+    return;
+  }
+  if (menu.getAttribute("class").includes("slideIn2")) {
+    menu.classList.add("slideOut2");
+    menu.classList.remove("slideIn2");
+  } else {
+    return;
+  }
 });
+
+barBtn.addEventListener("click", () => {
+  if (menu.getAttribute("class").includes("slideIn2")) {
+    menu.classList.remove("slideIn2");
+    menu.classList.add("slideOut2");
+  } else if (menu.getAttribute("class").includes("slideIn2") === false) {
+    menu.classList.add("slideIn2");
+    menu.classList.remove("slideOut2");
+  } else {
+    return;
+  }
+  if (bar.getAttribute("class").includes("slideIn")) {
+    bar.classList.toggle("slideOut");
+    bar.classList.remove("slideIn");
+  } else {
+    return;
+  }
+});
+
 if (gradiant.getAttribute("class").includes("close")) {
   gradiant.classList.toggle("close");
 }
