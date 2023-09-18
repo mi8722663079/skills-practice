@@ -177,7 +177,7 @@ button:active {
   100% {
     opacity: 1;
     top: 50;
-    width: 40%;
+    width: 45%;
     cursor: auto;
     left: 0;
   }
@@ -186,7 +186,7 @@ button:active {
   0% {
     opacity: 1;
     left: 0;
-    width: 40%;
+    width: 45%;
     cursor: auto;
     top: 50;
   }
@@ -277,20 +277,21 @@ nav {
   padding: 5px;
   box-shadow: 0px 7px 20px -1px rgba(0, 113, 206, 0.707);
   background-color: rgb(42, 39, 39);
-  width: 40%;
+  width: 45%;
   height: fit-content;
   border: none;
   border-radius: 7px;
   left: -500;
   top: 0;
 }
-
+.menu-box:hover .chosen .borders {
+  opacity: 1;
+}
 .chosen {
-  width: 40px;
+  width: 100%;
   border-radius: 7px;
-  border: 1.17px solid transparent;
   position: relative;
-  height: 40px;
+  height: 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -298,31 +299,52 @@ nav {
   font-size: 8px;
   font-weight: bold;
   color: white;
-  background: linear-gradient(rgb(42, 39, 39), rgb(42, 39, 39)) padding-box,
-    var(--gradientS) border-box;
   overflow: hidden;
+  background-color: rgba(36, 93, 213, 0.04);
 }
-.pseudo {
-  width: 100%;
-  height: 100%;
+.chosens {
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  margin: 1px;
+  border-radius: 7px;
+  border: 1.17px solid transparent;
+  height: 80px;
   display: flex;
   position: relative;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-radius: 7px;
-  background-color: transparent;
+  font-size: 8px;
+  font-weight: bold;
+  color: white;
+  overflow: hidden;
+  background-color: rgb(61, 60, 60);
+  z-index: 2;
 }
-.ball {
-  opacity: 0;
+.chosen::after,
+.borders {
+  content: "";
   position: absolute;
-  width: 20px;
-  z-index: 3;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 600ms;
   height: 100%;
-  background: var(--gradientL);
-  filter: blur(10px);
+  background: radial-gradient(
+    80px circle at var(--mouse-x) var(--mouse-y),
+    rgba(36, 93, 213, 0.4) 13%,
+    rgba(23, 46, 209, 0) 99%
+  );
+  z-index: 3;
 }
-.ball:hover {
+.borders {
+  background: radial-gradient(
+    10px circle at var(--mouse-x) var(--mouse-y),
+    rgba(36, 93, 213, 0.4) 33%,
+    rgba(23, 46, 209, 0) 99%
+  );
+  z-index: 1;
+}
+.chosen:hover:after {
   opacity: 1;
 }
 .chosen i {
