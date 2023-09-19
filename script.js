@@ -681,8 +681,8 @@ panels2.forEach((panel) => {
       }
       setTimeout(() => {
         header3.textContent = "PlayStation 5 Console";
-        text.textContent =
-          "Experience an all-new generation of incredible PlayStation games. PS5 consoles are currently in stock";
+        text3.textContent =
+          "Experience an all-new generation of incredible PlayStation games. PS5 consoles are currently in stock.";
         image2.setAttribute("src", ads[1]);
       }, 200);
       panel5.setAttribute("data-state", "active");
