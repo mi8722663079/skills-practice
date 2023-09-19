@@ -5,7 +5,7 @@ const panel1 = document.querySelector(".e1");
 const panel2 = document.querySelector(".e2");
 const panel3 = document.querySelector(".e3");
 const image = document.querySelector(".ad1");
-const search = document.querySelector(".navigate svg");
+const search = document.querySelector(".navigate .fa-search");
 const barBtn = document.querySelector(".navigate .fa-bars");
 const bar = document.querySelector(".search-box");
 const header = document.querySelector(".buynow h1");
@@ -467,9 +467,9 @@ barBtn.addEventListener("click", () => {
   }
 });
 
-if (gradiant.getAttribute("class").includes("close")) {
-  gradiant.classList.toggle("close");
-}
+// if (gradiant.getAttribute("class").includes("close")) {
+//   gradiant.classList.toggle("close");
+// }
 
 menu.onmousemove = (e) => {
   chosen.forEach((chose) => {
