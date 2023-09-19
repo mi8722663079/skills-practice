@@ -593,8 +593,8 @@ button {
 
 .content,
 .content2 {
-  margin-bottom: 5px;
-  margin-top: 5px;
+  margin-bottom: 20px;
+  margin-top: 10px;
   position: relative;
   height: fit-content;
   left: -13%;
@@ -638,6 +638,7 @@ button {
   display: grid;
   grid-template: 300px 200px 60px / 1fr;
   justify-content: center;
+  margin-bottom: 40px;
 }
 .offer {
   width: 100%;
