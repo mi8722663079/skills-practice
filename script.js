@@ -1,10 +1,16 @@
 const root = document.querySelector(":root");
 const content = document.querySelector(".content");
+const content2 = document.querySelector(".content2");
 const panels = document.querySelectorAll(".element");
+const panels2 = document.querySelectorAll(".element2");
 const panel1 = document.querySelector(".e1");
 const panel2 = document.querySelector(".e2");
 const panel3 = document.querySelector(".e3");
+const panel4 = document.querySelector(".e4");
+const panel5 = document.querySelector(".e5");
+const panel6 = document.querySelector(".e6");
 const image = document.querySelector(".ad1");
+const image2 = document.querySelector(".offer img");
 const search = document.querySelector(".navigate .fa-search");
 const barBtn = document.querySelector(".navigate .fa-bars");
 const bar = document.querySelector(".search-box");
@@ -12,7 +18,10 @@ const header = document.querySelector(".buynow h1");
 const header2 = document.querySelector(".buynow h2");
 const text = document.querySelector(".buynow p");
 const btn1 = document.querySelector(".buynow button");
-const btn1s = getComputedStyle(btn1, ":hover");
+const header3 = document.querySelector(".ps h1");
+const text3 = document.querySelector(".ps p");
+const btn3 = document.querySelector(".ps .btn1");
+const btn4 = document.querySelector(".ps .btn2");
 const gradiant = document.querySelector(".gradiant");
 const menu = document.querySelector(".menu-box");
 const chosen = document.querySelectorAll(".chosen");
@@ -21,6 +30,14 @@ const rs = getComputedStyle(root);
 const p1 = getComputedStyle(panel1);
 const p2 = getComputedStyle(panel2);
 const p3 = getComputedStyle(panel3);
+const p4 = getComputedStyle(panel4);
+const p5 = getComputedStyle(panel5);
+const p6 = getComputedStyle(panel6);
+const ads = [
+  "https://gmedia.playstation.com/is/image/SIEPDC/DualSense-Edge-image-block-01-en-24aug22?$800px$",
+  "https://gmedia.playstation.com/is/image/SIEPDC/playstation-5-horizontal-product-shot-01-ps5-en-23nov20?$800px$",
+  "https://gmedia.playstation.com/is/image/SIEPDC/3d-pulse-headset-range-image-block-03-en-13sep22?$800px$",
+];
 const img2 =
   "https://image.api.playstation.com/vulcan/ap/rnd/202308/2212/5e294c6a94756c31544a45d52724ccb0f343b3ce11f67807.png?w=1920&thumb=false";
 const img3 =
@@ -38,6 +55,11 @@ window.addEventListener("load", () => {
   header2.classList.add("opacity2");
   text.classList.add("opacity3");
   btn1.classList.add("opacity4");
+  image2.classList.add("opacity5");
+  header3.classList.add("opacity6");
+  text3.classList.add("opacity7");
+  btn3.classList.add("opacity8");
+  btn4.classList.add("opacity9");
 });
 panels.forEach((panel) => {
   panel.addEventListener("click", () => {
@@ -430,7 +452,376 @@ panels.forEach((panel) => {
     }
   });
 });
-
+panels2.forEach((panel) => {
+  panel.addEventListener("click", () => {
+    if (panel.getAttribute("data-state") == "active") {
+      return;
+    }
+    setTimeout(() => {
+      image2.classList.toggle("opacity5");
+      header3.classList.toggle("opacity6");
+      text3.classList.toggle("opacity7");
+      btn3.classList.toggle("opacity8");
+      btn4.classList.toggle("opacity9");
+    }, 1);
+    image2.classList.toggle("opacity5");
+    header3.classList.toggle("opacity6");
+    text3.classList.toggle("opacity7");
+    btn3.classList.toggle("opacity8");
+    btn4.classList.toggle("opacity9");
+    if (panel == panel4) {
+      if (panel6.getAttribute("data-state") == "active") {
+        panel4.animate(
+          [
+            {
+              transform: "translateX(214%)",
+              opacity: 0.7,
+            },
+            {
+              transform: "translateX(107%)",
+              opacity: 1,
+            },
+          ],
+          { duration: 400, fill: "forwards", easing: "ease-in-out" }
+        );
+        panel5.animate(
+          [
+            {
+              transform: "translateX(-107%)",
+              opacity: 0.7,
+              offset: 0,
+            },
+            {
+              transform: "translateX(-147%)",
+              opacity: 0,
+              offset: 0.25,
+            },
+            {
+              transform: "translateX(147%)",
+              opacity: 0,
+              offset: 0.5,
+            },
+            {
+              transform: "translateX(107%)",
+              opacity: 0.7,
+              offset: 1,
+            },
+          ],
+          { duration: 400, fill: "forwards", easing: "ease-in-out" }
+        );
+        panel6.animate(
+          [
+            {
+              transform: "translateX(-107%)",
+              opacity: 1,
+              offset: 0,
+            },
+            {
+              transform: "translateX(-214%)",
+              opacity: 0.7,
+              offset: 1,
+            },
+          ],
+          { duration: 400, fill: "forwards", easing: "ease-in-out" }
+        );
+        panel4.setAttribute("data-state", "active");
+        panel5.setAttribute("data-state", "hidden");
+        panel6.setAttribute("data-state", "hidden");
+      } else {
+        panel4.animate(
+          [
+            {
+              transform: "translateX(0)",
+              opacity: 1,
+            },
+            {
+              transform: "translateX(107%)",
+            },
+          ],
+          { duration: 400, fill: "forwards", easing: "ease-in-out" }
+        );
+        panel5.animate(
+          [
+            {
+              transform: "translateX(0)",
+            },
+            {
+              transform: "translateX(107%)",
+            },
+          ],
+          { duration: 400, fill: "forwards", easing: "ease-in-out" }
+        );
+        panel6.animate(
+          [
+            {
+              transform: "translateX(0)",
+              opacity: 0.7,
+              offset: 0,
+            },
+            {
+              transform: "translateX(90%)",
+              opacity: 0,
+              offset: 0.25,
+            },
+            {
+              transform: "translateX(-244%)",
+              opacity: 0,
+              offset: 0.5,
+            },
+            {
+              transform: "translateX(-214%)",
+              opacity: 0.7,
+              offset: 1,
+            },
+          ],
+          { duration: 400, fill: "forwards", easing: "ease-in-out" }
+        );
+        panel4.setAttribute("data-state", "active");
+        panel5.setAttribute("data-state", "hidden");
+        panel6.setAttribute("data-state", "hidden");
+      }
+      setTimeout(() => {
+        header3.textContent = "DualSense Edge™ Wireless Controller";
+        text3.textContent =
+          "Get an edge in gameplay with remappable buttons, tunable triggers and sticks, changeable stick caps, back buttons, and more.";
+        image2.setAttribute("src", ads[0]);
+      }, 200);
+    } else if (panel == panel5) {
+      if (panel6.getAttribute("data-state") == "active") {
+        panel4.animate(
+          [
+            {
+              transform: "translateX(214%)",
+              opacity: 0.7,
+              offset: 0,
+            },
+            {
+              transform: "translateX(244%)",
+              opacity: 0,
+              offset: 0.25,
+            },
+            {
+              transform: "translateX(-40%)",
+              opacity: 0,
+              offset: 0.5,
+            },
+            {
+              transform: "translateX(0%)",
+              opacity: 0.7,
+              opacity: 1,
+            },
+          ],
+          { duration: 400, fill: "forwards", easing: "ease-in-out" }
+        );
+        panel5.animate(
+          [
+            {
+              transform: "translateX(-107%)",
+              opacity: 0.7,
+            },
+            {
+              transform: "translateX(0%)",
+              opacity: 1,
+            },
+          ],
+          { duration: 400, fill: "forwards", easing: "ease-in-out" }
+        );
+        panel6.animate(
+          [
+            {
+              transform: "translateX(-107%)",
+              opacity: 1,
+              offset: 0,
+            },
+            {
+              transform: "translateX(0%)",
+              opacity: 0.7,
+              offset: 1,
+            },
+          ],
+          { duration: 400, fill: "forwards", easing: "ease-in-out" }
+        );
+        panel4.setAttribute("data-state", "hidden");
+        panel5.setAttribute("data-state", "active");
+        panel6.setAttribute("data-state", "hidden");
+      } else {
+        panel4.animate(
+          [
+            {
+              transform: "translateX(107%)",
+            },
+            {
+              transform: "translateX(0%)",
+            },
+          ],
+          { duration: 400, fill: "forwards", easing: "ease-in-out" }
+        );
+        panel5.animate(
+          [
+            {
+              transform: "translateX(107%)",
+              opacity: 1,
+            },
+            {
+              transform: "translateX(0%)",
+            },
+          ],
+          { duration: 400, fill: "forwards", easing: "ease-in-out" }
+        );
+        panel6.animate(
+          [
+            {
+              transform: "translateX(-214%)",
+              opacity: 0.7,
+              offset: 0,
+            },
+            {
+              transform: "translateX(-244%)",
+              opacity: 0,
+              offset: 0.25,
+            },
+            {
+              transform: "translateX(90%)",
+              opacity: 0,
+              offset: 0.5,
+            },
+            {
+              transform: "translateX(0%)",
+              opacity: 0.7,
+              offset: 1,
+            },
+          ],
+          { duration: 400, fill: "forwards", easing: "ease-in-out" }
+        );
+        panel4.setAttribute("data-state", "hidden");
+        panel5.setAttribute("data-state", "active");
+        panel6.setAttribute("data-state", "hidden");
+      }
+      setTimeout(() => {
+        header3.textContent = "PlayStation 5 Console";
+        text.textContent =
+          "Experience an all-new generation of incredible PlayStation games. PS5 consoles are currently in stock";
+        image2.setAttribute("src", ads[1]);
+      }, 200);
+    } else if (panel == panel6) {
+      if (panel4.getAttribute("data-state") == "active") {
+        panel4.animate(
+          [
+            {
+              transform: "translateX(107%)",
+              opacity: 1,
+              offset: 0,
+            },
+            {
+              transform: "translateX(214%)",
+              opacity: 0.7,
+            },
+          ],
+          { duration: 400, fill: "forwards", easing: "ease-in-out" }
+        );
+        panel5.animate(
+          [
+            {
+              transform: "translateX(107%)",
+              opacity: 0.7,
+              offset: 0,
+            },
+            {
+              transform: "translateX(147%)",
+              opacity: 0,
+              offset: 0.25,
+            },
+            {
+              transform: "translateX(-147%)",
+              opacity: 0,
+              offset: 0.5,
+            },
+            {
+              transform: "translateX(-107%)",
+              opacity: 0.7,
+              offset: 1,
+            },
+          ],
+          { duration: 400, fill: "forwards", easing: "ease-in-out" }
+        );
+        panel6.animate(
+          [
+            {
+              transform: "translateX(-214%)",
+              opacity: 0.7,
+            },
+            {
+              transform: "translateX(-107%)",
+              opacity: 1,
+            },
+          ],
+          { duration: 400, fill: "forwards", easing: "ease-in-out" }
+        );
+        panel4.setAttribute("data-state", "hidden");
+        panel5.setAttribute("data-state", "hidden");
+        panel6.setAttribute("data-state", "active");
+      } else {
+        panel4.animate(
+          [
+            {
+              transform: "translateX(0%)",
+              opacity: 0.7,
+              offset: 0,
+            },
+            {
+              transform: "translateX(-90%)",
+              opacity: 0,
+              offset: 0.25,
+            },
+            {
+              transform: "translateX(244%)",
+              opacity: 0,
+              offset: 0.5,
+            },
+            {
+              transform: "translateX(214%)",
+              opacity: 0.7,
+              offset: 1,
+            },
+          ],
+          { duration: 400, fill: "forwards", easing: "ease-in-out" }
+        );
+        panel5.animate(
+          [
+            {
+              transform: "translateX(0)",
+            },
+            {
+              transform: "translateX(-107%)",
+            },
+          ],
+          { duration: 400, fill: "forwards", easing: "ease-in-out" }
+        );
+        panel6.animate(
+          [
+            {
+              transform: "translateX(0)",
+              opacity: 1,
+            },
+            {
+              transform: "translateX(-107%)",
+            },
+          ],
+          { duration: 400, fill: "forwards", easing: "ease-in-out" }
+        );
+        panel4.setAttribute("data-state", "hidden");
+        panel5.setAttribute("data-state", "hidden");
+        panel6.setAttribute("data-state", "active");
+      }
+      setTimeout(() => {
+        header3.textContent = "PULSE 3D™ Wireless Headset";
+        text3.textContent =
+          "Enjoy a seamless wireless experience with a headset fine-tuned for 3D Audio on PS5 consoles.";
+        image2.setAttribute("src", ads[2]);
+      }, 200);
+    }
+  });
+});
 search.addEventListener("click", () => {
   if (bar.getAttribute("class").includes("slideIn")) {
     bar.classList.remove("slideIn");

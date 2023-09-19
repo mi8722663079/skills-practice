@@ -31,11 +31,16 @@ button:active {
 }
 /* general class */
 
-[data-state="active"] {
+[data-state="active"] img {
+  outline: 1.5px solid #00439c;
+  outline-offset: 2px;
   opacity: 1;
+  transition: opacity 400ms, outline 400ms;
 }
 [data-state="hidden"] img {
   opacity: 0.7;
+  outline: 1.5px solid transparent;
+  transition: opacity 400ms, outline 400ms;
 }
 :root {
   --gradiant: radial-gradient(#c90707, #470302);
@@ -70,6 +75,14 @@ button:active {
     opacity: 0;
   }
   100% {
+    opacity: 1;
+  }
+}
+@keyframes opacity2 {
+  from {
+    opacity: 0;
+  }
+  to {
     opacity: 1;
   }
 }
@@ -243,6 +256,25 @@ button:active {
 }
 .opacity4 {
   animation: opacity1 900ms ease-in-out forwards;
+}
+.opacity5 {
+  animation: opacity2 800ms ease-in-out forwards;
+}
+.opacity6 {
+  animation: opacity2 700ms ease-in-out forwards;
+  animation-delay: 100ms;
+}
+.opacity7 {
+  animation: opacity2 800ms ease-in-out forwards;
+  animation-delay: 200ms;
+}
+.opacity8 {
+  animation: opacity2 900ms ease-in-out forwards;
+  animation-delay: 200ms;
+}
+.opacity9 {
+  animation: opacity2 900ms ease-in-out forwards;
+  animation-delay: 200ms;
 }
 /* end of general class */
 .parent {
@@ -496,6 +528,7 @@ article {
 .image {
   position: relative;
   width: 100vw;
+  object-fit: contain;
   background-image: var(--gradiant);
 }
 
@@ -558,7 +591,9 @@ button {
   aspect-ratio: 2/3;
 }
 
-.content {
+.content,
+.content2 {
+  margin-bottom: 5px;
   margin-top: 5px;
   position: relative;
   height: fit-content;
@@ -567,25 +602,33 @@ button {
   display: flex;
   justify-items: center;
 }
-.element {
+.element,
+.element2 {
   width: 40vw;
   margin: 0 5px 0 5px;
   border-radius: 8px;
-  height: fit-content;
+  height: 15vh;
   outline: 1.5px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: outline 400ms;
-  outline-offset: 1.5px;
+  outline-offset: 2px;
 }
-.element:hover {
+.element:hover,
+.element2:hover {
   cursor: pointer;
   outline: 1.5px solid #00439c;
-  outline-offset: 1.5px;
+  outline-offset: 2px;
 }
-.element:active {
+.element:active,
+.element2:active {
   cursor: pointer;
 }
-.element img {
+.element img,
+.element2 img {
   border-radius: 8px;
+  object-fit: cover;
   width: 100%;
   height: 100%;
 }
@@ -593,7 +636,7 @@ button {
 .ps {
   width: 100%;
   display: grid;
-  grid-template: 1fr 200px 60px / 1fr;
+  grid-template: 300px 200px 60px / 1fr;
   justify-content: center;
 }
 .offer {
@@ -602,8 +645,14 @@ button {
   justify-content: center;
   padding-right: 25%;
 }
-.ps img {
-  width: 65%;
+.offer img {
+  width: 100%;
+  object-fit: contain;
+  opacity: 0;
+}
+.element2 img {
+  width: 100%;
+  object-fit: contain;
 }
 .ps h1 {
   font-size: 16px;
@@ -611,6 +660,7 @@ button {
   max-width: 65%;
   margin-left: 5%;
   font-weight: 500;
+  opacity: 0;
 }
 .ps p {
   margin-left: 3%;
@@ -620,6 +670,7 @@ button {
   margin-bottom: 3%;
   text-align: center;
   font-weight: 500;
+  opacity: 0;
 }
 .ps button {
   border: none;
@@ -634,15 +685,16 @@ button {
   outline: 1.5px solid transparent;
   transition: outline 400ms, opacity 400ms;
   outline-offset: 1.2px;
+  opacity: 0;
 }
 .btn1 {
   background-color: #00439c;
   outline: 1.5px solid transparent;
   font-size: 12px;
-
   outline-offset: 1.2px;
-  transition: outline 400ms, opacity 400ms;
   margin-left: 20%;
+  opacity: 0;
+  transition: outline 400ms, opacity 400ms;
 }
 .btn1:hover {
   outline: 1.5px solid #00439c;
@@ -678,10 +730,10 @@ footer {
   background-color: black;
   display: flex;
   justify-content: end;
-  padding-right: 110px;
+  padding-right: 120px;
 }
 .sony > img {
   width: 60px;
   height: 45px;
-  color: white;
+  /* color: white; */
 }
