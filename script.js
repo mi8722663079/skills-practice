@@ -133,9 +133,6 @@ panels.forEach((panel) => {
           ],
           { duration: 400, fill: "forwards", easing: "ease-in-out" }
         );
-        panel1.setAttribute("data-state", "active");
-        panel2.setAttribute("data-state", "hidden");
-        panel3.setAttribute("data-state", "hidden");
       } else {
         panel1.animate(
           [
@@ -185,9 +182,6 @@ panels.forEach((panel) => {
           ],
           { duration: 400, fill: "forwards", easing: "ease-in-out" }
         );
-        panel1.setAttribute("data-state", "active");
-        panel2.setAttribute("data-state", "hidden");
-        panel3.setAttribute("data-state", "hidden");
       }
       setTimeout(() => {
         header.textContent = "PS Portable Remote Player";
@@ -201,6 +195,9 @@ panels.forEach((panel) => {
         btn1.classList.remove("red-outline");
         btn1.classList.remove("yellow-outline");
       }, 200);
+      panel1.setAttribute("data-state", "active");
+      panel2.setAttribute("data-state", "hidden");
+      panel3.setAttribute("data-state", "hidden");
       gradiant.style.backgroundImage = "var(--gradiant1)";
     } else if (panel == panel2) {
       if (panel3.getAttribute("data-state") == "active") {
@@ -257,9 +254,6 @@ panels.forEach((panel) => {
           ],
           { duration: 400, fill: "forwards", easing: "ease-in-out" }
         );
-        panel1.setAttribute("data-state", "hidden");
-        panel2.setAttribute("data-state", "active");
-        panel3.setAttribute("data-state", "hidden");
       } else {
         panel1.animate(
           [
@@ -309,9 +303,6 @@ panels.forEach((panel) => {
           ],
           { duration: 400, fill: "forwards", easing: "ease-in-out" }
         );
-        panel1.setAttribute("data-state", "hidden");
-        panel2.setAttribute("data-state", "active");
-        panel3.setAttribute("data-state", "hidden");
       }
       setTimeout(() => {
         header.textContent = "BE Greater, Together";
@@ -325,6 +316,9 @@ panels.forEach((panel) => {
         btn1.classList.remove("blue-outline");
         btn1.classList.remove("yellow-outline");
       }, 200);
+      panel2.setAttribute("data-state", "active");
+      panel1.setAttribute("data-state", "hidden");
+      panel3.setAttribute("data-state", "hidden");
       gradiant.style.backgroundImage = "var(--gradiant)";
     } else if (panel == panel3) {
       if (panel1.getAttribute("data-state") == "active") {
@@ -380,9 +374,6 @@ panels.forEach((panel) => {
           ],
           { duration: 400, fill: "forwards", easing: "ease-in-out" }
         );
-        panel1.setAttribute("data-state", "hidden");
-        panel2.setAttribute("data-state", "hidden");
-        panel3.setAttribute("data-state", "active");
       } else {
         panel1.animate(
           [
@@ -432,9 +423,6 @@ panels.forEach((panel) => {
           ],
           { duration: 400, fill: "forwards", easing: "ease-in-out" }
         );
-        panel1.setAttribute("data-state", "hidden");
-        panel2.setAttribute("data-state", "hidden");
-        panel3.setAttribute("data-state", "active");
       }
       setTimeout(() => {
         header.textContent = "BE the Fastest EVER!!";
@@ -448,6 +436,9 @@ panels.forEach((panel) => {
         btn1.classList.remove("red-outline");
         btn1.classList.remove("blue-outline");
       }, 200);
+      panel3.setAttribute("data-state", "active");
+      panel1.setAttribute("data-state", "hidden");
+      panel2.setAttribute("data-state", "hidden");
       gradiant.style.backgroundImage = "var(--gradiant2)";
     }
   });
@@ -524,9 +515,6 @@ panels2.forEach((panel) => {
           ],
           { duration: 400, fill: "forwards", easing: "ease-in-out" }
         );
-        panel4.setAttribute("data-state", "active");
-        panel5.setAttribute("data-state", "hidden");
-        panel6.setAttribute("data-state", "hidden");
       } else {
         panel4.animate(
           [
@@ -576,9 +564,6 @@ panels2.forEach((panel) => {
           ],
           { duration: 400, fill: "forwards", easing: "ease-in-out" }
         );
-        panel4.setAttribute("data-state", "active");
-        panel5.setAttribute("data-state", "hidden");
-        panel6.setAttribute("data-state", "hidden");
       }
       setTimeout(() => {
         header3.textContent = "DualSense Edge™ Wireless Controller";
@@ -586,6 +571,9 @@ panels2.forEach((panel) => {
           "Get an edge in gameplay with remappable buttons, tunable triggers and sticks, changeable stick caps, back buttons, and more.";
         image2.setAttribute("src", ads[0]);
       }, 200);
+      panel4.setAttribute("data-state", "active");
+      panel5.setAttribute("data-state", "hidden");
+      panel6.setAttribute("data-state", "hidden");
     } else if (panel == panel5) {
       if (panel6.getAttribute("data-state") == "active") {
         panel4.animate(
@@ -641,9 +629,6 @@ panels2.forEach((panel) => {
           ],
           { duration: 400, fill: "forwards", easing: "ease-in-out" }
         );
-        panel4.setAttribute("data-state", "hidden");
-        panel5.setAttribute("data-state", "active");
-        panel6.setAttribute("data-state", "hidden");
       } else {
         panel4.animate(
           [
@@ -693,9 +678,6 @@ panels2.forEach((panel) => {
           ],
           { duration: 400, fill: "forwards", easing: "ease-in-out" }
         );
-        panel4.setAttribute("data-state", "hidden");
-        panel5.setAttribute("data-state", "active");
-        panel6.setAttribute("data-state", "hidden");
       }
       setTimeout(() => {
         header3.textContent = "PlayStation 5 Console";
@@ -703,6 +685,9 @@ panels2.forEach((panel) => {
           "Experience an all-new generation of incredible PlayStation games. PS5 consoles are currently in stock";
         image2.setAttribute("src", ads[1]);
       }, 200);
+      panel5.setAttribute("data-state", "active");
+      panel4.setAttribute("data-state", "hidden");
+      panel6.setAttribute("data-state", "hidden");
     } else if (panel == panel6) {
       if (panel4.getAttribute("data-state") == "active") {
         panel4.animate(
@@ -757,9 +742,6 @@ panels2.forEach((panel) => {
           ],
           { duration: 400, fill: "forwards", easing: "ease-in-out" }
         );
-        panel4.setAttribute("data-state", "hidden");
-        panel5.setAttribute("data-state", "hidden");
-        panel6.setAttribute("data-state", "active");
       } else {
         panel4.animate(
           [
@@ -809,9 +791,6 @@ panels2.forEach((panel) => {
           ],
           { duration: 400, fill: "forwards", easing: "ease-in-out" }
         );
-        panel4.setAttribute("data-state", "hidden");
-        panel5.setAttribute("data-state", "hidden");
-        panel6.setAttribute("data-state", "active");
       }
       setTimeout(() => {
         header3.textContent = "PULSE 3D™ Wireless Headset";
@@ -819,6 +798,9 @@ panels2.forEach((panel) => {
           "Enjoy a seamless wireless experience with a headset fine-tuned for 3D Audio on PS5 consoles.";
         image2.setAttribute("src", ads[2]);
       }, 200);
+      panel6.setAttribute("data-state", "active");
+      panel4.setAttribute("data-state", "hidden");
+      panel5.setAttribute("data-state", "hidden");
     }
   });
 });
