@@ -628,7 +628,6 @@ button {
 .element img,
 .element2 img {
   border-radius: 8px;
-  object-fit: cover;
   width: 100%;
   height: 100%;
 }
