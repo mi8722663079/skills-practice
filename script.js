@@ -39,9 +39,9 @@ const ads = [
   "https://gmedia.playstation.com/is/image/SIEPDC/3d-pulse-headset-range-image-block-03-en-13sep22?$800px$",
 ];
 const img2 =
-  "https://image.api.playstation.com/vulcan/ap/rnd/202308/2212/5e294c6a94756c31544a45d52724ccb0f343b3ce11f67807.png?w=1920&thumb=false";
+  "https://gmedia.playstation.com/is/image/SIEPDC/NBA2K24-hero-mobile-01-en-28jun23?$800px$";
 const img3 =
-  "https://media.direct.playstation.com/is/image/sierialto/playstation_portal_key_art_hero_1023x599?$Hero_Desktop$";
+  "https://gmedia.playstation.com/is/image/SIEPDC/ps-portal-remote-player-homepage-hero-banner-mobile-01-en-18aug23?$800px$";
 const img1 =
   "https://image.api.playstation.com/vulcan/ap/rnd/202306/1219/60eca3ac155247e21850c7d075d01ebf0f3f5dbf19ccd2a1.jpg";
 
@@ -425,12 +425,12 @@ panels.forEach((panel) => {
         );
       }
       setTimeout(() => {
-        header.textContent = "BE the Fastest EVER!!";
-        header2.textContent = "Strive for speed";
+        header.textContent = "NBA 2K24";
+        header2.textContent = "See you on the court";
         text.textContent =
-          "Experience speed like never before --get RWS deluxe edition";
+          "Experience hoops culture in NBA 2K24, avaliable now on ps4 & ps5";
         image.setAttribute("src", img2);
-        btn1.style.backgroundColor = "#9b9b06";
+        btn1.style.backgroundColor = "#b006ca";
         btn1.textContent = "Buy now";
         btn1.classList.add("yellow-outline");
         btn1.classList.remove("red-outline");

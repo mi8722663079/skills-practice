@@ -10,6 +10,13 @@ body {
   opacity: 0;
   animation: reveal 200ms ease-in-out forwards;
 }
+i {
+  background: linear-gradient(to right, #0189f9, #013881, #0189f9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200%;
+  animation: background-pan 3s linear infinite;
+}
 p,
 h1,
 h2 {
@@ -45,7 +52,7 @@ button:active {
 :root {
   --gradiant: radial-gradient(#c90707, #470302);
   --gradiant1: radial-gradient(#0714c9, #020947);
-  --gradiant2: radial-gradient(#c9c907, #464702);
+  --gradiant2: radial-gradient(#b006ca, #3b0247);
   --gradientS: linear-gradient(
     90deg,
     rgba(0, 212, 255, 1) 4%,
@@ -65,7 +72,7 @@ button:active {
   outline: 1.5px solid #c90707;
 }
 .yellow-outline:hover {
-  outline: 1.5px solid #9b9b06;
+  outline: 1.5px solid #b006ca;
 }
 @keyframes opacity1 {
   0% {
@@ -225,6 +232,14 @@ button:active {
     top: 0;
   }
 }
+@keyframes background-pan {
+  from {
+    background-position: 0% center;
+  }
+  to {
+    background-position: -200% center;
+  }
+}
 .slideIn {
   animation: slideIn 300ms forwards ease-in-out;
 }
@@ -288,8 +303,6 @@ button:active {
 
 nav {
   width: 100vw;
-  box-shadow: 0px 13px 14px -7px rgba(0, 113, 206, 0.707);
-  z-index: 10;
   display: flex;
   position: sticky;
   top: 0;
@@ -297,6 +310,8 @@ nav {
   align-items: center;
   background-color: white;
   font-size: 12px;
+  z-index: 10;
+  box-shadow: 0px 2px 12px 2px rgba(1, 137, 249, 0.5);
 }
 .menu-box {
   opacity: 0;
@@ -386,6 +401,7 @@ nav {
 }
 .chosen i {
   font-size: 16px;
+  margin-bottom: 3px;
   z-index: 2;
 }
 .chosen p {
@@ -429,19 +445,18 @@ nav {
   width: 0%;
   cursor: none;
   height: fit-content;
-  padding: 3px;
+  padding: 2px;
   opacity: 0;
 }
 .box {
-  border: 1.5px solid transparent;
+  background-color: rgb(61, 60, 60);
+  border: 1.5px solid rgba(36, 93, 213, 0.4);
   width: 100%;
-  background: linear-gradient(rgb(42, 39, 39), rgb(42, 39, 39)) padding-box,
-    var(--gradientS) border-box;
   border-radius: 7px;
 }
 .box i {
-  color: #00439c;
   margin-left: 7px;
+  font-size: 14px;
 }
 .box input {
   background-color: transparent;
@@ -451,12 +466,18 @@ nav {
   color: #0072ce;
   outline: none;
 }
+.box input::placeholder {
+  background: linear-gradient(to right, #0189f949, #0189f9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 nav > * {
   margin: 0 10px 0 10px;
 }
-nav > svg {
+nav > .ps-logo {
   margin-right: 30px;
   margin-bottom: 5px;
+  font-size: 40px;
 }
 .navigate {
   display: flex;
@@ -464,7 +485,7 @@ nav > svg {
   margin-bottom: 5px;
 }
 .navigate > .fa-bars {
-  color: #00439c;
+  background-size: 200%;
   margin-right: 15px;
   width: 10px;
   font-size: 14px;
@@ -475,7 +496,7 @@ nav > svg {
   transition: outline 200ms, opacity 200ms;
 }
 .navigate > .fa-search {
-  color: #00439c;
+  background-size: 200%;
   border-radius: 50%;
   padding: 3px;
   font-size: 16px;
@@ -497,7 +518,9 @@ nav > button {
   font-family: inherit;
   font-size: 10px;
   font-weight: bold;
-  background-color: #0072ce;
+  animation: background-pan 3s linear infinite;
+  background: linear-gradient(to right, #0189f9, #013881, #0189f9);
+  background-size: 200%;
   padding: 5px;
   color: white;
   margin: 20px 20px 20px 0px;
@@ -515,7 +538,7 @@ nav > button:active {
 }
 article {
   display: grid;
-  grid-template: 1fr fit-content 1fr / 1fr;
+  grid-template: 1fr fit-content 1fr 1fr 1fr / 1fr;
 }
 .gradiant {
   position: absolute;
@@ -604,10 +627,10 @@ button {
 }
 .element,
 .element2 {
-  width: 40vw;
+  width: 150px;
   margin: 0 5px 0 5px;
   border-radius: 8px;
-  height: 15vh;
+  height: 80px;
   outline: 1.5px solid transparent;
   display: flex;
   align-items: center;
@@ -637,13 +660,13 @@ button {
   display: grid;
   grid-template: 300px 200px 60px / 1fr;
   justify-content: center;
-  margin-bottom: 40px;
 }
 .offer {
-  width: 100%;
+  width: 90%;
   display: flex;
   justify-content: center;
-  padding-right: 25%;
+  object-fit: contain;
+  padding-right: 20%;
 }
 .offer img {
   width: 100%;
@@ -708,6 +731,123 @@ button {
 .btn2:active {
   opacity: 0.7;
 }
+.vr {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+  position: relative;
+  height: fit-content;
+}
+.image2 {
+  position: relative;
+  width: 100vw;
+  height: 100%;
+}
+.image2 img {
+  width: 100%;
+  object-fit: contain;
+}
+.shadow {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  bottom: 0;
+  left: 0;
+  color: white;
+}
+.shadow p {
+  margin: 10px 0px 20px 10px;
+  font-size: 10px;
+  text-align: center;
+  width: 80%;
+  font-weight: 500;
+}
+.real {
+  background: linear-gradient(to right, #0189f9, #013881, #0189f9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200%;
+  animation: background-pan 3s linear infinite;
+}
+.buttonZ button {
+  border: none;
+  padding: 4px 7px 4px 7px;
+  border-radius: 40px;
+  font-size: 10px;
+  font-weight: 700;
+}
+.buttonZ {
+  display: flex;
+  justify-content: space-around;
+  width: 145px;
+  height: fit-content;
+  margin-bottom: 20px;
+}
+.btnZ1 {
+  background-color: white;
+  outline: 1.5px solid transparent;
+  outline-offset: 1.2px;
+  transition: outline 400ms, opacity 400ms;
+}
+.btnZ2 {
+  background-color: #c90707;
+  color: white;
+  outline: 1.5px solid transparent;
+  transition: outline 400ms, opacity 400ms;
+  outline-offset: 1.2px;
+}
+.btnZ1:hover {
+  outline: 1.5px solid white;
+  outline-offset: 1.2px;
+}
+.btnZ2:hover {
+  outline: 1.5px solid #c90707;
+  outline-offset: 1.2px;
+}
+.btnZ1:active,
+.btnZ2:active {
+  opacity: 0.7;
+}
+.big-media {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5%;
+}
+
+.big-media h1 {
+  font-size: 17px;
+  font-weight: 300;
+  padding-left: 10%;
+}
+.social-media {
+  display: grid;
+  width: fit-content;
+  height: fit-content;
+  grid-template: 130px 130px / 130px 130px;
+  grid-gap: 25px;
+}
+.social-media img {
+  width: 130px;
+  height: 130px;
+  transform: scale(1);
+  opacity: 1;
+  transition: transform 400ms, opacity 400ms;
+}
+.social-media img:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+.social-media img:active {
+  opacity: 0.7;
+  cursor: pointer;
+  transform: scale(0.95);
+}
 footer {
   background-color: #00439c;
   color: white;
@@ -720,6 +860,9 @@ footer {
   display: grid;
   grid-template: 75px 45px / 1fr;
 }
+footer .fa-xl {
+  -webkit-text-fill-color: white;
+}
 .playstation > * {
   margin: 15px;
 }
@@ -730,7 +873,7 @@ footer {
   background-color: black;
   display: flex;
   justify-content: end;
-  padding-right: 120px;
+  padding-right: 160px;
 }
 .sony > img {
   width: 60px;
