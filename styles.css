@@ -666,7 +666,7 @@ button {
   display: flex;
   justify-content: center;
   object-fit: contain;
-  padding-right: 10%;
+  padding-right: 15%;
 }
 .offer img {
   width: 80%;
@@ -681,16 +681,16 @@ button {
   font-size: 16px;
   text-align: center;
   max-width: 65%;
-  margin-left: 8%;
+  margin-left: 2%;
   font-weight: 500;
   opacity: 0;
 }
 .ps p {
   margin-left: 3%;
   margin-top: 3%;
-  width: 70%;
+  width: 65%;
   height: 40px;
-  font-size: 11px;
+  font-size: 10px;
   margin-bottom: 3%;
   text-align: center;
   font-weight: 500;
@@ -716,7 +716,7 @@ button {
   outline: 1.5px solid transparent;
   font-size: 12px;
   outline-offset: 1.2px;
-  margin-left: 25%;
+  margin-left: 22%;
   opacity: 0;
   transition: outline 400ms, opacity 400ms;
 }
@@ -818,12 +818,13 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-left: 10%;
 }
 /* hello */
 .big-media h1 {
   font-size: 17px;
   font-weight: 300;
-  padding-left: 10%;
+  padding-left: 8%;
 }
 .social-media {
   display: grid;
