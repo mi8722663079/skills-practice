@@ -620,17 +620,17 @@ button {
   margin-top: 10px;
   position: relative;
   height: fit-content;
-  left: -13%;
+  left: -11%;
   width: 100%;
   display: flex;
   justify-items: center;
 }
 .element,
 .element2 {
-  width: 150px;
+  width: 180px;
   margin: 0 5px 0 5px;
   border-radius: 8px;
-  height: 80px;
+  height: 100px;
   outline: 1.5px solid transparent;
   display: flex;
   align-items: center;
@@ -666,10 +666,10 @@ button {
   display: flex;
   justify-content: center;
   object-fit: contain;
-  padding-right: 20%;
+  padding-right: 15%;
 }
 .offer img {
-  width: 100%;
+  width: 80%;
   object-fit: contain;
   opacity: 0;
 }
@@ -681,7 +681,7 @@ button {
   font-size: 16px;
   text-align: center;
   max-width: 65%;
-  margin-left: 5%;
+  margin-left: 8%;
   font-weight: 500;
   opacity: 0;
 }
@@ -715,7 +715,7 @@ button {
   outline: 1.5px solid transparent;
   font-size: 12px;
   outline-offset: 1.2px;
-  margin-left: 20%;
+  margin-left: 25%;
   opacity: 0;
   transition: outline 400ms, opacity 400ms;
 }
@@ -817,7 +817,7 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 5%;
+  padding: 15%;
 }
 
 .big-media h1 {
